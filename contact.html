@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f9fc;
+      color: #2c3e50;
+    }
+
+    /* Popup Styles */
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-content {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .popup-content h3 {
+      margin: 0 0 10px;
+      font-size: 1.5rem;
+      color: #2c3e50;
+    }
+
+    .popup-content p {
+      margin: 0 0 20px;
+      color: #7f8c8d;
+      font-size: 1rem;
+    }
+
+    .popup-content button {
+      background: #3498db;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .popup-content button:hover {
+      background: #2980b9;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header style="background: #5d0d38; color: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center;">
+    <h1 style="margin: 0; font-size: 1.8rem;">Pratham Pandey</h1>
+    <nav>
+      <a href="index.html" style="color: white; text-decoration: none; margin-right: 15px; font-size: 1rem;">Home</a>
+      <a href="welcome.html" style="color: white; text-decoration: none; margin-right: 15px; font-size: 1rem;">Welcome</a>
+      <a href="about.html" style="color: white; text-decoration: none; margin-right: 15px; font-size: 1rem;">About</a>
+      <a href="education.html" style="color: white; text-decoration: none; margin-right: 15px; font-size: 1rem;">Education</a>
+      <a href="experience.html" style="color: white; text-decoration: none; margin-right: 15px; font-size: 1rem;">Experience</a>
+      <a href="contact.html" style="color: white; text-decoration: none; font-size: 1rem;">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Contact Section -->
+  <section style="padding: 50px; text-align: center;">
+    <h2 style="font-size: 2.5rem; color: #2c3e50; margin-bottom: 30px;">Get in Touch</h2>
+    <p style="font-size: 1.2rem; color: #7f8c8d; margin-bottom: 30px;">
+      Feel free to reach out to me by filling out the form below or contacting me directly at <strong>prathampandey@gmail.com</strong>.
+    </p>
+
+    <!-- Contact Form -->
+    <form id="contactForm" style="max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+      <label for="name" style="font-size: 1.1rem; color: #2c3e50; display: block; margin-bottom: 8px;">Your Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" 
+             style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem;">
+
+      <label for="email" style="font-size: 1.1rem; color: #2c3e50; display: block; margin-bottom: 8px;">Your Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" 
+             style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem;">
+
+      <label for="message" style="font-size: 1.1rem; color: #2c3e50; display: block; margin-bottom: 8px;">Your Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Enter your message" 
+                style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem;"></textarea>
+
+      <button type="submit" style="background: #3498db; color: white; padding: 10px 25px; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer;">
+        Submit
+      </button>
+    </form>
+  </section>
+
+  <!-- Popup Notification -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h3>Success!</h3>
+      <p>Your message has been sent. I'll get back to you soon.</p>
+      <button onclick="closePopup()">Close</button>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const form = document.getElementById('contactForm');
+    const popup = document.getElementById('popup');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Simple validation
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !message) {
+        alert('Please fill in all fields.');
+        return;
+      }
+
+      // Show popup on successful submission
+      popup.style.display = 'flex';
+
+      // Reset the form
+      form.reset();
+    });
+
+    // Close the popup
+    function closePopup() {
+      popup.style.display = 'none';
+    }
+  </script>
+</body>
+</html>

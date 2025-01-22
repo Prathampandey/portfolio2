@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me - Portfolio</title>
+</head>
+<body style="margin: 0; font-family: Arial, sans-serif; background: #f7f9fc; color: #2c3e50;">
+  <!-- Navigation Bar -->
+  <header style="background: #5d242d; color: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center;">
+    <h1 style="margin: 0; font-size: 1.8rem;">Pratham Pandey</h1>
+    <nav>
+      <a href="index.html" style="color: white; text-decoration: none; margin-right: 15px; font-size: 1rem;">Home</a>
+      <a href="about.html" style="color: white; text-decoration: none; margin-right: 15px; font-size: 1rem;">About</a>
+      <a href="education.html" style="color: white; text-decoration: none; margin-right: 15px; font-size: 1rem;">Education</a>
+      <a href="experience.html" style="color: white; text-decoration: none; margin-right: 15px; font-size: 1rem;">Experience</a>
+      <a href="contact.html" style="color: white; text-decoration: none; font-size: 1rem;">Contact</a>
+    </nav>
+    <button onclick="toggleTheme()" style="background: #5d242d; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer;">Toggle Theme</button>
+
+  </header>
+
+  <!-- About Section -->
+  <section style="padding: 50px; text-align: center;">
+    <h2 style="font-size: 2.5rem; color: #2c3e50; margin-bottom: 30px;">About Me</h2>
+    <div style="max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+      <img src="Pratham(photo).jpg" alt="Your Photo" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 20px; object-fit: cover;">
+      <p style="font-size: 1.2rem; color: #7f8c8d; margin-bottom: 30px; line-height: 1.6;">
+        Hello! My name is <strong>Pratham Pandey</strong>, and I am a passionate software engineer fresher specializing in full-stack development. I am from Greater Noida, Uttar Pradesh, and I love spending time with my loved ones. Whenever I get some free time, you can find me playing cricket. 
+        I chose computer science because of my deep interest in the field and the great scope it offers for innovation and growth.
+      </p>
+      <p style="font-size: 1.2rem; color: #7f8c8d; margin-bottom: 30px; line-height: 1.6;">
+        Throughout my journey, I’ve gained knowledge and hands-on experience in various programming languages and technologies. I am always looking to learn and grow as a developer, working on impactful projects that challenge my problem-solving skills.
+      </p>
+      <h3 style="font-size: 1.8rem; color: #34495e; margin-bottom: 20px;">Key Achievements</h3>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="font-size: 1rem; color: #2c3e50; margin: 10px 0;">2 🏅 Bronze Medal in the International Mathematics Olympiad</li>
+        <li style="font-size: 1rem; color: #2c3e50; margin: 10px 0;">🎓 Various certifications in programming languages and development frameworks</li>
+      </ul>
+      <h3 style="font-size: 1.8rem; color: #34495e; margin-bottom: 20px;">Fun Fact</h3>
+<p id="funFact" style="font-size: 1.2rem; color: #7f8c8d; margin-bottom: 20px;">Click the button to see a fun fact about me!</p>
+<button onclick="showFunFact()" style="background: #3498db; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Show Fun Fact</button>
+
+<h3 style="font-size: 1.8rem; color: #34495e; margin-bottom: 20px;">Skills</h3>
+<div>
+  <p>JavaScript</p>
+  <div style="background: #e0e0e0; width: 100%; height: 20px; border-radius: 5px; margin-bottom: 10px;">
+    <div id="jsBar" style="background: #3498db; height: 100%; width: 0%; border-radius: 5px;"></div>
+  </div>
+  
+  <p>Python</p>
+  <div style="background: #e0e0e0; width: 100%; height: 20px; border-radius: 5px; margin-bottom: 10px;">
+    <div id="pythonBar" style="background: #e67e22; height: 100%; width: 0%; border-radius: 5px;"></div>
+  </div>
+
+  <p>React.js</p>
+  <div style="background: #e0e0e0; width: 100%; height: 20px; border-radius: 5px; margin-bottom: 10px;">
+    <div id="reactBar" style="background: #8e44ad; height: 100%; width: 0%; border-radius: 5px;"></div>
+  </div>
+
+  <p>Java</p>
+  <div style="background: #e0e0e0; width: 100%; height: 20px; border-radius: 5px; margin-bottom: 10px;">
+    <div id="JavaBar" style="background: #4494ad; height: 100%; width: 0%; border-radius: 5px;"></div>
+  </div>
+
+  <button onclick="fillSkillBars()" style="background: #3498db; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-top: 20px;">Show Proficiency</button>
+</div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer style="background: #34495e; color: white; text-align: center; padding: 10px 0; margin-top: 30px;">
+    <p style="margin: 0; font-size: 0.9rem;">© 2025 Pratham Pandey. All rights reserved.</p>
+  </footer>
+  <script>
+    function showFunFact() {
+      const facts = [
+        "I have a collection 40+ medals in various sports",
+        "I once wrote 1,000 lines of code in a single day!",
+        "I love playing chess in my spare time.",
+        "I have a collection of 30+ cricket trophies.",
+      ];
+      const randomFact = facts[Math.floor(Math.random() * facts.length)];
+      document.getElementById("funFact").textContent = randomFact;
+    }
+  </script>
+  <script>
+    function fillSkillBars() {
+      const skills = [
+        { id: "jsBar", percentage: 90 },
+        { id: "pythonBar", percentage: 85 },
+        { id: "reactBar", percentage: 80 },
+        { id: "JavaBar", percentage: 95 },
+
+      ];
+  
+      skills.forEach(skill => {
+        let width = 0;
+        const interval = setInterval(() => {
+          if (width >= skill.percentage) {
+            clearInterval(interval);
+          } else {
+            width++;
+            document.getElementById(skill.id).style.width = width + "%";
+          }
+        }, 10);
+      });
+    }
+  </script>
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      if (body.style.background === "black") {
+        body.style.background = "#f7f9fc";
+        body.style.color = "#2c3e50";
+      } else {
+        body.style.background = "black";
+        body.style.color = "white";
+      }
+    }
+  </script>
+  
+  
+</body>
+</html>
