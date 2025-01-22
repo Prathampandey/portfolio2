@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome - Pratham Pandey</title>
+  <style>
+    /* Apply a full-page gradient background */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #3412f3, #f1c40f);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Center container for the photo and text */
+    .photo-container {
+      text-align: center;
+    }
+
+    /* Styling the photo */
+    .photo-container img {
+      width: 200px; /* Adjust size */
+      height: 200px;
+      border-radius: 50%; /* Make the image circular */
+      border: 5px solid #fff; /* Add a white border */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+      cursor: pointer; /* Pointer cursor on hover */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    }
+
+    /* Hover effect for the photo */
+    .photo-container img:hover {
+      transform: scale(1.1); /* Slightly enlarge on hover */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhance shadow */
+    }
+
+    /* Text below the photo */
+    .photo-container p {
+      font-size: 1.2rem;
+      color: #fff; /* White text */
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="photo-container">
+    <a href="index.html">
+      <img src="Pratham(photo).jpg" alt="Pratham Pandey">
+    </a>
+    <p>Click on the photo to explore my portfolio</p>
+  </div>
+</body>
+</html>
